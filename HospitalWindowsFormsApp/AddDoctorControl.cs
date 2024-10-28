@@ -49,5 +49,10 @@ namespace HospitalWindowsFormsApp
                 MessageBox.Show("Doctor creado con éxito!", "Doctor registrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Visible= false;
+        }
     }
 }

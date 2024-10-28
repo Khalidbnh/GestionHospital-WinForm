@@ -58,6 +58,7 @@
             this.btnAddPaciente.TabIndex = 0;
             this.btnAddPaciente.Text = "Añadir Paciente";
             this.btnAddPaciente.UseVisualStyleBackColor = true;
+            this.btnAddPaciente.Click += new System.EventHandler(this.btnAddPaciente_Click);
             // 
             // btnAddAdministrativo
             // 

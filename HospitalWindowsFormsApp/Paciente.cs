@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace HospitalWindowsFormsApp
 {
-    internal class Paciente : Persona
+    public class Paciente : Persona
     {
         public string Enfermedad { get; set; }
         public double Altura { get; set; }
         public double Peso { get; set; }
 
         private Medico _medicoasignado;
-        public Medico MedicoAsignado
+        public Medico MedicoAsignados
         {
             get { return _medicoasignado; }
             set
@@ -28,12 +28,12 @@ namespace HospitalWindowsFormsApp
         }
 
 
-        public Paciente(string nombre,int age, string movil, int edad, string enfermedad, double peso, double altura, Medico medicoasignado) : base(nombre,age, movil)
+        public Paciente(string nombre,int age, string movil, string enfermedad, double peso, double altura, Medico medicoasignado) : base(nombre,age, movil)
         {
             this.Enfermedad = enfermedad;
             this.Altura = altura;
             this.Peso = peso;
-            this.MedicoAsignado = medicoasignado;
+            this.MedicoAsignados = medicoasignado;
         }
 
 

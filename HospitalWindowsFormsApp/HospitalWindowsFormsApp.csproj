@@ -52,6 +52,12 @@
     <Compile Include="AddDoctorControl.Designer.cs">
       <DependentUpon>AddDoctorControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddPacienteControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AddPacienteControl.Designer.cs">
+      <DependentUpon>AddPacienteControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Administrativo.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -67,6 +73,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AddDoctorControl.resx">
       <DependentUpon>AddDoctorControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddPacienteControl.resx">
+      <DependentUpon>AddPacienteControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
