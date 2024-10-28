@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddAdminControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AddAdminControl.Designer.cs">
+      <DependentUpon>AddAdminControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddDoctorControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -71,6 +77,9 @@
     <Compile Include="Persona.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddAdminControl.resx">
+      <DependentUpon>AddAdminControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddDoctorControl.resx">
       <DependentUpon>AddDoctorControl.cs</DependentUpon>
     </EmbeddedResource>

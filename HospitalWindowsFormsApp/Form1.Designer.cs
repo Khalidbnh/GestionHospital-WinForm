@@ -68,6 +68,7 @@
             this.btnAddAdministrativo.TabIndex = 0;
             this.btnAddAdministrativo.Text = "Añadir Administrativo";
             this.btnAddAdministrativo.UseVisualStyleBackColor = true;
+            this.btnAddAdministrativo.Click += new System.EventHandler(this.btnAddAdministrativo_Click);
             // 
             // btnListaMedicos
             // 
@@ -150,6 +151,7 @@
             this.Controls.Add(this.btnAddMedico);
             this.Name = "Form1";
             this.Text = "Gestion Hospital";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
         }

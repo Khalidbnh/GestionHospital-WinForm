@@ -36,6 +36,30 @@ namespace HospitalWindowsFormsApp
 
             tryP = int.TryParse(txtEdadDoctor.Text, out edadM);
 
+            if (string.IsNullOrEmpty(txtNombreDoctor.Text))
+            {
+                MessageBox.Show("Nombre Requerido", "Error msg", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(txtEdadDoctor.Text))
+            {
+                MessageBox.Show("Edad Requerido", "Error msg", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(txtMovilDoctor.Text))
+            {
+                MessageBox.Show("Movil Requerido", "Error msg", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(txtEspecialidadDoctor.Text))
+            {
+                MessageBox.Show("Especialidad Requerido", "Error msg", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             if (!tryP)
             {
                 MessageBox.Show("Medico Edad no valido", "Edad no valido", MessageBoxButtons.OK, MessageBoxIcon.Error);

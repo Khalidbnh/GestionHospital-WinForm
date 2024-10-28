@@ -15,6 +15,7 @@ namespace HospitalWindowsFormsApp
         List<Persona> personaList = new List<Persona>();
         AddDoctorControl AddDoctorControl;
         AddPacienteControl AddPacienteControl;
+        AddAdminControl AddAdminControl;
 
         public Form1()
         {
@@ -54,7 +55,25 @@ namespace HospitalWindowsFormsApp
                 AddPacienteControl = null;
             }
 
+            if(AddAdminControl != null)
+            {
+                this.Controls.Remove(AddAdminControl);
+                AddAdminControl.Dispose();
+                AddAdminControl = null;
+            }
+
             
+        }
+
+        private void btnAddAdministrativo_Click(object sender, EventArgs e)
+        {
+            RemoveOtherControls();
+            AddAdminControl = new AddAdminControl(personaList); this.Controls.Add(AddAdminControl);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

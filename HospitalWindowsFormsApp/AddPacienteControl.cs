@@ -37,7 +37,51 @@ namespace HospitalWindowsFormsApp
             int edadP;
             bool tryP;
 
+
             tryP = int.TryParse(txtEdadP.Text, out edadP);
+
+            if (string.IsNullOrEmpty(txtNombreP.Text))
+            {
+                MessageBox.Show("Nombre Requerido", "Error msg", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(txtEdadP.Text))
+            {
+                MessageBox.Show("Edad Requerido", "Error msg", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(txtMovilP.Text))
+            {
+                MessageBox.Show("Movil Requerido", "Error msg", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(txtEnfermedad.Text))
+            {
+                MessageBox.Show("Enfermedad Requerido", "Error msg", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(txtPeso.Text))
+            {
+                MessageBox.Show("Peso Requerido", "Error msg", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(txtAltura.Text))
+            {
+                MessageBox.Show("Altura Requerido", "Error msg", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (cmbMedicoAsignado.SelectedItem == null)
+            {
+                MessageBox.Show("You must select at least one Medico from the list.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+          
 
             if (!tryP)
             {
@@ -52,7 +96,7 @@ namespace HospitalWindowsFormsApp
                 Paciente paciente = new Paciente(nombreM, edadP, movilM, enfermedad, peso, altura, assignedDoctor);
                 PersonasList.Add(paciente);
 
-                MessageBox.Show("`Paciente creado con éxito!", "Paciente registrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Paciente creado con éxito!", "Paciente registrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
