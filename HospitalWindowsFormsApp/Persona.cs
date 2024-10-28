@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HospitalWindowsFormsApp
 {
-    internal class Persona
+    public class Persona
     {
         public string Nombre { get; set; }
         public string Movil { get; set; }

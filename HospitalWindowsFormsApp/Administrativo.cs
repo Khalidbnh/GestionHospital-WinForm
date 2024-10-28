@@ -10,7 +10,7 @@ namespace HospitalWindowsFormsApp
     {
         public string Puesto { get; set; }
 
-        public Administrativo(string nombre,string age, string movil, string puesto) : base(nombre,age, movil)
+        public Administrativo(string nombre,int age, string movil, string puesto) : base(nombre,age, movil)
         {
             this.Puesto = puesto;
         }
