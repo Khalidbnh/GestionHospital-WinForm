@@ -72,6 +72,12 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Hospital.cs" />
+    <Compile Include="ListaMedicosControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListaMedicosControl.Designer.cs">
+      <DependentUpon>ListaMedicosControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Medico.cs" />
     <Compile Include="Paciente.cs" />
     <Compile Include="Persona.cs" />
@@ -88,6 +94,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaMedicosControl.resx">
+      <DependentUpon>ListaMedicosControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

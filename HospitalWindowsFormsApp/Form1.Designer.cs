@@ -78,6 +78,7 @@
             this.btnListaMedicos.TabIndex = 0;
             this.btnListaMedicos.Text = "Lista de Medicos";
             this.btnListaMedicos.UseVisualStyleBackColor = true;
+            this.btnListaMedicos.Click += new System.EventHandler(this.btnListaMedicos_Click);
             // 
             // btnListaPacientes
             // 
