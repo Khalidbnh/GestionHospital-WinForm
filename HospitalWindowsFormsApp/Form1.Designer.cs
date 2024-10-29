@@ -98,6 +98,7 @@
             this.btnListaAdmin.TabIndex = 0;
             this.btnListaAdmin.Text = "Lista de Administrativos";
             this.btnListaAdmin.UseVisualStyleBackColor = true;
+            this.btnListaAdmin.Click += new System.EventHandler(this.btnListaAdmin_Click);
             // 
             // btnListaPersonas
             // 

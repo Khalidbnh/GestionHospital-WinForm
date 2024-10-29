@@ -18,6 +18,7 @@ namespace HospitalWindowsFormsApp
         AddAdminControl AddAdminControl;
         private ListaMedicosControl listDoctorsControl;
         private ListaPacientesControl listaPacientesControl;
+        ListaAdministrativosControl listaAdministrativosControl;
 
         public Form1()
         {
@@ -76,6 +77,13 @@ namespace HospitalWindowsFormsApp
                 this.Controls.Remove(listaPacientesControl);
                 listaPacientesControl.Dispose();
                 listaPacientesControl = null;
+            }
+
+            if (listaAdministrativosControl != null)
+            {
+                this.Controls.Remove(listaAdministrativosControl);
+                listaAdministrativosControl.Dispose();
+                listaAdministrativosControl = null;
             }
 
 
@@ -144,6 +152,30 @@ namespace HospitalWindowsFormsApp
                 }
             }
 
+        }
+
+        private void btnListaAdmin_Click(object sender, EventArgs e)
+        {
+            RemoveOtherControls();
+
+            listaAdministrativosControl = new ListaAdministrativosControl();
+
+            this.Controls.Add(listaAdministrativosControl);
+
+            foreach (Persona persona in personaList)
+            {
+                if(persona.GetType() == typeof(Administrativo))
+                {
+                    Administrativo administrativo = (Administrativo)persona;
+                    ListViewItem item = new ListViewItem(administrativo.Nombre);
+
+                    item.SubItems.Add(administrativo.Age.ToString());
+                    item.SubItems.Add(administrativo.Movil);
+                    item.SubItems.Add(administrativo.Puesto);
+
+                    listaAdministrativosControl.listaAdministrativos.Items.Add(item);
+                }
+            }
         }
     }
 }

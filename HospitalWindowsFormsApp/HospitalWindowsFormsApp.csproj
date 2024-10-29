@@ -72,6 +72,12 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Hospital.cs" />
+    <Compile Include="ListaAdministrativosControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListaAdministrativosControl.Designer.cs">
+      <DependentUpon>ListaAdministrativosControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="ListaMedicosControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -100,6 +106,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaAdministrativosControl.resx">
+      <DependentUpon>ListaAdministrativosControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListaMedicosControl.resx">
       <DependentUpon>ListaMedicosControl.cs</DependentUpon>
