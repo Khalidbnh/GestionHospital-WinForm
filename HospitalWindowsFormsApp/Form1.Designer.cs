@@ -88,6 +88,7 @@
             this.btnListaPacientes.TabIndex = 0;
             this.btnListaPacientes.Text = "Lista de Pacientes";
             this.btnListaPacientes.UseVisualStyleBackColor = true;
+            this.btnListaPacientes.Click += new System.EventHandler(this.btnListaPacientes_Click);
             // 
             // btnListaAdmin
             // 

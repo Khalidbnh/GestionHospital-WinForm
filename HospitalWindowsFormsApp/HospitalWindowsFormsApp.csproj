@@ -78,6 +78,12 @@
     <Compile Include="ListaMedicosControl.Designer.cs">
       <DependentUpon>ListaMedicosControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="ListaPacientesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListaPacientesControl.Designer.cs">
+      <DependentUpon>ListaPacientesControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Medico.cs" />
     <Compile Include="Paciente.cs" />
     <Compile Include="Persona.cs" />
@@ -97,6 +103,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ListaMedicosControl.resx">
       <DependentUpon>ListaMedicosControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaPacientesControl.resx">
+      <DependentUpon>ListaPacientesControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
