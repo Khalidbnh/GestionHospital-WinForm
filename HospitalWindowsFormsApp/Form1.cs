@@ -20,6 +20,7 @@ namespace HospitalWindowsFormsApp
         private ListaPacientesControl listaPacientesControl;
         ListaAdministrativosControl listaAdministrativosControl;
         EliminarMedicoControl EliminarMedicoControl;
+        EliminarPacienteControl EliminarPacienteControl;
 
         public Form1()
         {
@@ -92,6 +93,13 @@ namespace HospitalWindowsFormsApp
                 this.Controls.Remove(EliminarMedicoControl);
                 EliminarMedicoControl.Dispose();
                 EliminarMedicoControl = null;
+            }
+
+            if (EliminarPacienteControl != null)
+            {
+                this.Controls.Remove(EliminarPacienteControl);
+                EliminarPacienteControl.Dispose();
+                EliminarPacienteControl = null;
             }
 
 
@@ -195,6 +203,14 @@ namespace HospitalWindowsFormsApp
             
 
             this.Controls.Add(EliminarMedicoControl);
+        }
+
+        private void btnDeletePaciente_Click(object sender, EventArgs e)
+        {
+            RemoveOtherControls();
+
+            EliminarPacienteControl = new EliminarPacienteControl(personaList);
+            this.Controls.Add(EliminarPacienteControl);
         }
     }
 }

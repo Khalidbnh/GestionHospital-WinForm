@@ -128,6 +128,7 @@
             this.btnDeletePaciente.TabIndex = 0;
             this.btnDeletePaciente.Text = "Eliminar Paciente";
             this.btnDeletePaciente.UseVisualStyleBackColor = true;
+            this.btnDeletePaciente.Click += new System.EventHandler(this.btnDeletePaciente_Click);
             // 
             // btnDeleteAdmin
             // 
