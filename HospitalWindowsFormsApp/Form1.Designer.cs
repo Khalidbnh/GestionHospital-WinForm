@@ -116,8 +116,9 @@
             this.btnDeleteMedico.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnDeleteMedico.Size = new System.Drawing.Size(223, 51);
             this.btnDeleteMedico.TabIndex = 0;
-            this.btnDeleteMedico.Text = "Eliminar Medico by ID";
+            this.btnDeleteMedico.Text = "Eliminar Medico";
             this.btnDeleteMedico.UseVisualStyleBackColor = true;
+            this.btnDeleteMedico.Click += new System.EventHandler(this.btnDeleteMedico_Click);
             // 
             // btnDeletePaciente
             // 
@@ -125,7 +126,7 @@
             this.btnDeletePaciente.Name = "btnDeletePaciente";
             this.btnDeletePaciente.Size = new System.Drawing.Size(223, 51);
             this.btnDeletePaciente.TabIndex = 0;
-            this.btnDeletePaciente.Text = "Eliminar Paciente by ID";
+            this.btnDeletePaciente.Text = "Eliminar Paciente";
             this.btnDeletePaciente.UseVisualStyleBackColor = true;
             // 
             // btnDeleteAdmin
@@ -134,7 +135,7 @@
             this.btnDeleteAdmin.Name = "btnDeleteAdmin";
             this.btnDeleteAdmin.Size = new System.Drawing.Size(223, 51);
             this.btnDeleteAdmin.TabIndex = 0;
-            this.btnDeleteAdmin.Text = "Eliminar Administrativos by ID";
+            this.btnDeleteAdmin.Text = "Eliminar Administrativo";
             this.btnDeleteAdmin.UseVisualStyleBackColor = true;
             // 
             // Form1

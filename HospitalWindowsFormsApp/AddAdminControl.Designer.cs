@@ -141,6 +141,7 @@
             this.Location = new System.Drawing.Point(22, 257);
             this.Name = "AddAdminControl";
             this.Size = new System.Drawing.Size(757, 408);
+            this.Load += new System.EventHandler(this.AddAdminControl_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

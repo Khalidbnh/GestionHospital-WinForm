@@ -19,6 +19,7 @@ namespace HospitalWindowsFormsApp
         private ListaMedicosControl listDoctorsControl;
         private ListaPacientesControl listaPacientesControl;
         ListaAdministrativosControl listaAdministrativosControl;
+        EliminarMedicoControl EliminarMedicoControl;
 
         public Form1()
         {
@@ -84,6 +85,13 @@ namespace HospitalWindowsFormsApp
                 this.Controls.Remove(listaAdministrativosControl);
                 listaAdministrativosControl.Dispose();
                 listaAdministrativosControl = null;
+            }
+
+            if (EliminarMedicoControl != null)
+            {
+                this.Controls.Remove(EliminarMedicoControl);
+                EliminarMedicoControl.Dispose();
+                EliminarMedicoControl = null;
             }
 
 
@@ -176,6 +184,17 @@ namespace HospitalWindowsFormsApp
                     listaAdministrativosControl.listaAdministrativos.Items.Add(item);
                 }
             }
+        }
+
+        private void btnDeleteMedico_Click(object sender, EventArgs e)
+        {
+            RemoveOtherControls();
+
+            EliminarMedicoControl = new EliminarMedicoControl(personaList);
+
+            
+
+            this.Controls.Add(EliminarMedicoControl);
         }
     }
 }

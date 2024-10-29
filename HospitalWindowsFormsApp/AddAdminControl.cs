@@ -72,5 +72,10 @@ namespace HospitalWindowsFormsApp
                 MessageBox.Show("Administrativo creado con éxito!", "Doctor registrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        private void AddAdminControl_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
