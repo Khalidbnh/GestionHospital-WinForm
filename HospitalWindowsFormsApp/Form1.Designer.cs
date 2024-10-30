@@ -274,12 +274,13 @@
             this.btnDeleteADlista.TabIndex = 2;
             this.btnDeleteADlista.Text = "Eliminar";
             this.btnDeleteADlista.UseVisualStyleBackColor = true;
+            this.btnDeleteADlista.Click += new System.EventHandler(this.btnDeleteADlista_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(803, 677);
+            this.ClientSize = new System.Drawing.Size(809, 677);
             this.Controls.Add(this.grpAdmin);
             this.Controls.Add(this.grpPaciente);
             this.Controls.Add(this.btnAdmins);

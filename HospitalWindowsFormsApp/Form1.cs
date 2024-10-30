@@ -333,5 +333,26 @@ namespace HospitalWindowsFormsApp
                 MessageBox.Show($"{nombre} deleted.", "Item Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        private void btnDeleteADlista_Click(object sender, EventArgs e)
+        {
+            if (listaAdministrativosControl.listaAdministrativos.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Please select an item to delete.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            var selectedItem = listaAdministrativosControl.listaAdministrativos.Items[0];
+            string nombre = selectedItem.SubItems[0].Text;
+
+            Persona persona = personaList.FirstOrDefault(p => p.Nombre == nombre && p is Administrativo);
+
+            if (persona != null)
+            {
+                personaList.Remove(persona);
+                listaAdministrativosControl.listaAdministrativos.Items.Remove(selectedItem);
+                MessageBox.Show($"{nombre} deleted.", "Item Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
     }
 }
