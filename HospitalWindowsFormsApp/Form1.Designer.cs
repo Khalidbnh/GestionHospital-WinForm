@@ -264,6 +264,7 @@
             this.btnDeletePDLista.TabIndex = 2;
             this.btnDeletePDLista.Text = "Eliminar";
             this.btnDeletePDLista.UseVisualStyleBackColor = true;
+            this.btnDeletePDLista.Click += new System.EventHandler(this.btnDeletePDLista_Click);
             // 
             // btnDeleteADlista
             // 

@@ -311,5 +311,27 @@ namespace HospitalWindowsFormsApp
                 MessageBox.Show("Selected item not found in the data source.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btnDeletePDLista_Click(object sender, EventArgs e)
+        {
+            if(listaPacientesControl.listaPacientesView.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Please select an item to delete.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            var selectedItem = listaPacientesControl.listaPacientesView.SelectedItems[0];
+            string nombre = selectedItem.SubItems[0].Text;
+            
+
+
+            Persona persona = personaList.FirstOrDefault(p=> p.Nombre == nombre && p is Paciente);
+            if(persona != null)
+            {
+                personaList.Remove(persona);
+                listaPacientesControl.listaPacientesView.Items.Remove(selectedItem);
+                MessageBox.Show($"{nombre} deleted.", "Item Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
     }
 }
