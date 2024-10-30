@@ -23,6 +23,7 @@ namespace HospitalWindowsFormsApp
         EliminarMedicoControl EliminarMedicoControl;
         EliminarPacienteControl EliminarPacienteControl;
         EliminarAdministrativoControl EliminarAdministrativoControl;
+        EditarMedicoControl EditarMedicoControl;
 
         public Form1()
         {
@@ -112,6 +113,13 @@ namespace HospitalWindowsFormsApp
                 this.Controls.Remove(EliminarAdministrativoControl);
                 EliminarAdministrativoControl.Dispose();
                 EliminarAdministrativoControl = null;
+            }
+
+            if (EditarMedicoControl != null)
+            {
+                this.Controls.Remove (EditarMedicoControl);
+                EditarMedicoControl.Dispose();
+                EditarMedicoControl= null;
             }
 
         }
@@ -264,7 +272,29 @@ namespace HospitalWindowsFormsApp
 
         private void btnEditarMedico_Click(object sender, EventArgs e)
         {
+            listDoctorsControl.Visible = false;
+            if (listDoctorsControl.ListDoctorsView.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Please select an item to delete.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+            
+            // Get the selected item from ListView (first item if single selection)
+            var selectedItem = listDoctorsControl.ListDoctorsView.SelectedItems[0];
+
+            // Retrieve values from each column (assuming column order is: nombre, edad, movil, especialidad)
+            string nombre = selectedItem.SubItems[0].Text;
+
+            // Find the matching persona in personaList based on unique properties (e.g., movil)
+            Persona personaToEdit = personaList.FirstOrDefault(p => p.Nombre == nombre && p is Medico);
+
+            if (personaToEdit != null)
+            {
+                EditarMedicoControl = new EditarMedicoControl(personaList, (Medico)personaToEdit);
+                this.Controls.Add(EditarMedicoControl);
+                
+            }
         }
 
         private void btnEditPaciente_Click(object sender, EventArgs e)
