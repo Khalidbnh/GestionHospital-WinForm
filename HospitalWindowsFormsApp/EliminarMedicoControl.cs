@@ -55,5 +55,10 @@ namespace HospitalWindowsFormsApp
            
 
         }
+
+        private void EliminarMedicoControl_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

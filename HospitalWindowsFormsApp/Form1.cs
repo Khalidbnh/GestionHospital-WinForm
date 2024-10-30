@@ -18,9 +18,10 @@ namespace HospitalWindowsFormsApp
         AddAdminControl AddAdminControl;
         private ListaMedicosControl listDoctorsControl;
         private ListaPacientesControl listaPacientesControl;
-        ListaAdministrativosControl listaAdministrativosControl;
+        private ListaAdministrativosControl listaAdministrativosControl;
         EliminarMedicoControl EliminarMedicoControl;
         EliminarPacienteControl EliminarPacienteControl;
+        EliminarAdministrativoControl EliminarAdministrativoControl;
 
         public Form1()
         {
@@ -102,6 +103,12 @@ namespace HospitalWindowsFormsApp
                 EliminarPacienteControl = null;
             }
 
+            if (EliminarAdministrativoControl != null)
+            {
+                this.Controls.Remove(EliminarAdministrativoControl);
+                EliminarAdministrativoControl.Dispose();
+                EliminarAdministrativoControl = null;
+            }
 
         }
 
@@ -211,6 +218,13 @@ namespace HospitalWindowsFormsApp
 
             EliminarPacienteControl = new EliminarPacienteControl(personaList);
             this.Controls.Add(EliminarPacienteControl);
+        }
+
+        private void btnDeleteAdmin_Click(object sender, EventArgs e)
+        {
+            RemoveOtherControls();
+            EliminarAdministrativoControl = new EliminarAdministrativoControl(personaList);
+            this.Controls.Add(EliminarAdministrativoControl);
         }
     }
 }

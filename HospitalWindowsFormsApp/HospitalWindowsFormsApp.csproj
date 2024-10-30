@@ -65,6 +65,12 @@
       <DependentUpon>AddPacienteControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Administrativo.cs" />
+    <Compile Include="EliminarAdministrativoControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EliminarAdministrativoControl.Designer.cs">
+      <DependentUpon>EliminarAdministrativoControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="EliminarMedicoControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -115,6 +121,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddPacienteControl.resx">
       <DependentUpon>AddPacienteControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EliminarAdministrativoControl.resx">
+      <DependentUpon>EliminarAdministrativoControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EliminarMedicoControl.resx">
       <DependentUpon>EliminarMedicoControl.cs</DependentUpon>

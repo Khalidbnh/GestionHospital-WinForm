@@ -138,6 +138,7 @@
             this.btnDeleteAdmin.TabIndex = 0;
             this.btnDeleteAdmin.Text = "Eliminar Administrativo";
             this.btnDeleteAdmin.UseVisualStyleBackColor = true;
+            this.btnDeleteAdmin.Click += new System.EventHandler(this.btnDeleteAdmin_Click);
             // 
             // Form1
             // 
