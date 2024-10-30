@@ -42,6 +42,7 @@
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4});
+            this.lstViewMedicos.FullRowSelect = true;
             this.lstViewMedicos.HideSelection = false;
             this.lstViewMedicos.Location = new System.Drawing.Point(16, 15);
             this.lstViewMedicos.Name = "lstViewMedicos";

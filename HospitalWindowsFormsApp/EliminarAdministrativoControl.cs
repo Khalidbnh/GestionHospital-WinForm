@@ -46,7 +46,7 @@ namespace HospitalWindowsFormsApp
             if(personaToRemove != null)
             {
                 PersonasList.Remove(personaToRemove);
-                cmbNombreAdmin.Items.Remove(personaToRemove);
+                cmbNombreAdmin.Items.Remove(nombreAdminSelected);
                 MessageBox.Show($"{nombreAdminSelected} ha Eliminado.", "Medico Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }

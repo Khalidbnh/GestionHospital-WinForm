@@ -27,6 +27,9 @@ namespace HospitalWindowsFormsApp
         {
             InitializeComponent();
             personaList = new List<Persona>();
+            grpMedico.Visible   = false;
+            grpPaciente.Visible = false;
+            grpAdmin.Visible = false;
         }
 
         private void btnAddMedico_Click(object sender, EventArgs e)
@@ -225,6 +228,37 @@ namespace HospitalWindowsFormsApp
             RemoveOtherControls();
             EliminarAdministrativoControl = new EliminarAdministrativoControl(personaList);
             this.Controls.Add(EliminarAdministrativoControl);
+        }
+
+        private void btnListaPersonas_Click(object sender, EventArgs e)
+        {
+            RemoveOtherControls();
+        }
+
+        private void btnMedicos_Click(object sender, EventArgs e)
+        {
+            RemoveOtherControls();
+            grpPaciente.Visible = false;
+            grpAdmin.Visible = false;
+            grpMedico.Visible = true;
+        }
+
+        private void btnPacientes_Click(object sender, EventArgs e)
+        {
+            RemoveOtherControls();
+            grpMedico.Visible = false;
+            grpAdmin.Visible = false;
+            grpPaciente.Location = new Point(24, 69);
+            grpPaciente.Visible = true;
+        }
+
+        private void btnAdmins_Click(object sender, EventArgs e)
+        {
+            RemoveOtherControls();
+            grpMedico.Visible=false;
+            grpPaciente.Visible=false ;
+            grpAdmin.Location = new Point(24, 69);
+            grpAdmin.Visible = true;
         }
     }
 }

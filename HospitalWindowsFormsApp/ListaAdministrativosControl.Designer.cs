@@ -42,10 +42,11 @@
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4});
+            this.lstViewAdmins.FullRowSelect = true;
             this.lstViewAdmins.HideSelection = false;
-            this.lstViewAdmins.Location = new System.Drawing.Point(3, 21);
+            this.lstViewAdmins.Location = new System.Drawing.Point(3, 3);
             this.lstViewAdmins.Name = "lstViewAdmins";
-            this.lstViewAdmins.Size = new System.Drawing.Size(751, 363);
+            this.lstViewAdmins.Size = new System.Drawing.Size(751, 381);
             this.lstViewAdmins.TabIndex = 0;
             this.lstViewAdmins.UseCompatibleStateImageBehavior = false;
             this.lstViewAdmins.View = System.Windows.Forms.View.Details;
@@ -78,7 +79,7 @@
             this.Controls.Add(this.lstViewAdmins);
             this.Location = new System.Drawing.Point(22, 257);
             this.Name = "ListaAdministrativosControl";
-            this.Size = new System.Drawing.Size(757, 408);
+            this.Size = new System.Drawing.Size(757, 399);
             this.ResumeLayout(false);
 
         }

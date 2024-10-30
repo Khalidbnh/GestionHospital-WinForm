@@ -48,6 +48,7 @@
             this.columnHeader5,
             this.columnHeader6,
             this.columnHeader7});
+            this.lstviewPacientes.FullRowSelect = true;
             this.lstviewPacientes.HideSelection = false;
             this.lstviewPacientes.Location = new System.Drawing.Point(3, 40);
             this.lstviewPacientes.Name = "lstviewPacientes";
