@@ -16,6 +16,7 @@ namespace HospitalWindowsFormsApp
         public ListaMedicosControl()
         {
             InitializeComponent();
+            
         }
 
         private void ListaMedicosControl_Load(object sender, EventArgs e)

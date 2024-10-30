@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace HospitalWindowsFormsApp
 {
@@ -16,9 +17,9 @@ namespace HospitalWindowsFormsApp
         AddDoctorControl AddDoctorControl;
         AddPacienteControl AddPacienteControl;
         AddAdminControl AddAdminControl;
-        private ListaMedicosControl listDoctorsControl;
-        private ListaPacientesControl listaPacientesControl;
-        private ListaAdministrativosControl listaAdministrativosControl;
+        ListaMedicosControl listDoctorsControl;
+        ListaPacientesControl listaPacientesControl;
+        ListaAdministrativosControl listaAdministrativosControl;
         EliminarMedicoControl EliminarMedicoControl;
         EliminarPacienteControl EliminarPacienteControl;
         EliminarAdministrativoControl EliminarAdministrativoControl;
@@ -259,6 +260,56 @@ namespace HospitalWindowsFormsApp
             grpPaciente.Visible=false ;
             grpAdmin.Location = new Point(24, 69);
             grpAdmin.Visible = true;
+        }
+
+        private void btnEditarMedico_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEditPaciente_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EditAdmin_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDeleteMDLista_Click(object sender, EventArgs e)
+        {
+
+            if (listDoctorsControl.ListDoctorsView.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Please select an item to delete.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+
+            // Get the selected item from ListView (first item if single selection)
+            var selectedItem = listDoctorsControl.ListDoctorsView.SelectedItems[0];
+
+            // Retrieve values from each column (assuming column order is: nombre, edad, movil, especialidad)
+            string nombre = selectedItem.SubItems[0].Text;
+            string edad = selectedItem.SubItems[1].Text;
+            string movil = selectedItem.SubItems[2].Text;
+            string especialidad = selectedItem.SubItems[3].Text;
+
+            // Find the matching persona in personaList based on unique properties (e.g., movil)
+            Persona personaToRemove = personaList.FirstOrDefault(p => p.Nombre == nombre && p is Medico);
+
+            if (personaToRemove != null)
+            {
+                personaList.Remove(personaToRemove); // Remove from the data source
+                listDoctorsControl.ListDoctorsView.Items.Remove(selectedItem); // Remove from ListView
+
+                MessageBox.Show($"{nombre} deleted.", "Item Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Selected item not found in the data source.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
