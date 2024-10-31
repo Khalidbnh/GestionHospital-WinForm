@@ -45,7 +45,7 @@
             this.grpAdmin = new System.Windows.Forms.GroupBox();
             this.btnEditarMedico = new System.Windows.Forms.Button();
             this.btnEditPaciente = new System.Windows.Forms.Button();
-            this.EditAdmin = new System.Windows.Forms.Button();
+            this.btnEditAdmin = new System.Windows.Forms.Button();
             this.btnDeleteMDLista = new System.Windows.Forms.Button();
             this.btnDeletePDLista = new System.Windows.Forms.Button();
             this.btnDeleteADlista = new System.Windows.Forms.Button();
@@ -206,7 +206,7 @@
             // grpAdmin
             // 
             this.grpAdmin.Controls.Add(this.btnDeleteADlista);
-            this.grpAdmin.Controls.Add(this.EditAdmin);
+            this.grpAdmin.Controls.Add(this.btnEditAdmin);
             this.grpAdmin.Controls.Add(this.btnListaAdmin);
             this.grpAdmin.Controls.Add(this.btnDeleteAdmin);
             this.grpAdmin.Controls.Add(this.btnAddAdministrativo);
@@ -236,15 +236,15 @@
             this.btnEditPaciente.UseVisualStyleBackColor = true;
             this.btnEditPaciente.Click += new System.EventHandler(this.btnEditPaciente_Click);
             // 
-            // EditAdmin
+            // btnEditAdmin
             // 
-            this.EditAdmin.Location = new System.Drawing.Point(408, 22);
-            this.EditAdmin.Name = "EditAdmin";
-            this.EditAdmin.Size = new System.Drawing.Size(154, 50);
-            this.EditAdmin.TabIndex = 1;
-            this.EditAdmin.Text = "Editar Administrativo";
-            this.EditAdmin.UseVisualStyleBackColor = true;
-            this.EditAdmin.Click += new System.EventHandler(this.EditAdmin_Click);
+            this.btnEditAdmin.Location = new System.Drawing.Point(408, 22);
+            this.btnEditAdmin.Name = "btnEditAdmin";
+            this.btnEditAdmin.Size = new System.Drawing.Size(154, 50);
+            this.btnEditAdmin.TabIndex = 1;
+            this.btnEditAdmin.Text = "Editar Administrativo";
+            this.btnEditAdmin.UseVisualStyleBackColor = true;
+            this.btnEditAdmin.Click += new System.EventHandler(this.EditAdmin_Click);
             // 
             // btnDeleteMDLista
             // 
@@ -316,7 +316,7 @@
         private System.Windows.Forms.GroupBox grpAdmin;
         private System.Windows.Forms.Button btnEditarMedico;
         private System.Windows.Forms.Button btnEditPaciente;
-        private System.Windows.Forms.Button EditAdmin;
+        private System.Windows.Forms.Button btnEditAdmin;
         private System.Windows.Forms.Button btnDeleteMDLista;
         private System.Windows.Forms.Button btnDeletePDLista;
         private System.Windows.Forms.Button btnDeleteADlista;

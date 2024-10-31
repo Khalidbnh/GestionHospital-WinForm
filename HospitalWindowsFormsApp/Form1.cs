@@ -25,6 +25,7 @@ namespace HospitalWindowsFormsApp
         EliminarAdministrativoControl EliminarAdministrativoControl;
         EditarMedicoControl EditarMedicoControl;
         EditarPacienteControl EditarPacienteControl;
+        EditarAdminControl EditarAdminControl;
 
         public Form1()
         {
@@ -134,11 +135,20 @@ namespace HospitalWindowsFormsApp
                 EditarPacienteControl = null;
             }
 
+
+            if(EditarAdminControl != null)
+            {
+                this.Controls.Remove(EditarAdminControl);
+                EditarAdminControl.Dispose(); EditarAdminControl = null;
+            }
+
         }
 
         private void btnAddAdministrativo_Click(object sender, EventArgs e)
         {
             RemoveOtherControls();
+            btnDeleteADlista.Visible = false;
+            btnEditAdmin.Visible = false;
             AddAdminControl = new AddAdminControl(personaList); this.Controls.Add(AddAdminControl);
         }
 
@@ -206,7 +216,8 @@ namespace HospitalWindowsFormsApp
         private void btnListaAdmin_Click(object sender, EventArgs e)
         {
             RemoveOtherControls();
-
+            btnDeleteADlista.Visible = true;
+            btnEditAdmin.Visible = true;
             listaAdministrativosControl = new ListaAdministrativosControl();
 
             this.Controls.Add(listaAdministrativosControl);
@@ -248,6 +259,8 @@ namespace HospitalWindowsFormsApp
         private void btnDeleteAdmin_Click(object sender, EventArgs e)
         {
             RemoveOtherControls();
+            btnDeleteADlista.Visible = false;
+            btnEditAdmin.Visible = false;
             EliminarAdministrativoControl = new EliminarAdministrativoControl(personaList);
             this.Controls.Add(EliminarAdministrativoControl);
         }
@@ -343,6 +356,26 @@ namespace HospitalWindowsFormsApp
 
         private void EditAdmin_Click(object sender, EventArgs e)
         {
+            listaAdministrativosControl.Visible = false;
+            if (listaAdministrativosControl.listaAdministrativos.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Please select an item to delete.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            var selectedItem = listaAdministrativosControl.listaAdministrativos.SelectedItems[0];
+       
+            string nombre = selectedItem.SubItems[0].Text;
+
+            // Find the matching persona in personaList based on unique properties (e.g., movil)
+            Persona personaToEdit = personaList.FirstOrDefault(p => p.Nombre == nombre && p is Administrativo);
+
+            if (personaToEdit != null)
+            {
+                EditarAdminControl = new EditarAdminControl(personaList, (Administrativo)personaToEdit);
+                this.Controls.Add(EditarAdminControl);
+
+            }
 
         }
 
