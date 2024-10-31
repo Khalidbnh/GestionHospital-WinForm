@@ -24,6 +24,7 @@ namespace HospitalWindowsFormsApp
         EliminarPacienteControl EliminarPacienteControl;
         EliminarAdministrativoControl EliminarAdministrativoControl;
         EditarMedicoControl EditarMedicoControl;
+        EditarPacienteControl EditarPacienteControl;
 
         public Form1()
         {
@@ -37,6 +38,8 @@ namespace HospitalWindowsFormsApp
         private void btnAddMedico_Click(object sender, EventArgs e)
         {
             RemoveOtherControls();
+            btnEditarMedico.Visible = false;
+            btnDeleteMDLista.Visible = false;
             AddDoctorControl = new AddDoctorControl(personaList);
             this.Controls.Add(AddDoctorControl);
         }
@@ -44,6 +47,8 @@ namespace HospitalWindowsFormsApp
         private void btnAddPaciente_Click(object sender, EventArgs e)
         {
             RemoveOtherControls();
+            btnEditPaciente.Visible = false;
+            btnDeletePDLista.Visible = false;
             AddPacienteControl = new AddPacienteControl(personaList);
             this.Controls.Add(AddPacienteControl);
         }
@@ -122,6 +127,13 @@ namespace HospitalWindowsFormsApp
                 EditarMedicoControl= null;
             }
 
+            if(EditarPacienteControl!= null)
+            {
+                this.Controls.Remove(EditarPacienteControl);
+                EditarPacienteControl.Dispose();
+                EditarPacienteControl = null;
+            }
+
         }
 
         private void btnAddAdministrativo_Click(object sender, EventArgs e)
@@ -138,7 +150,8 @@ namespace HospitalWindowsFormsApp
         private void btnListaMedicos_Click(object sender, EventArgs e)
         {
             RemoveOtherControls();
-
+            btnEditarMedico.Visible = true;
+            btnDeleteMDLista.Visible = true;
             listDoctorsControl = new ListaMedicosControl();
 
             this.Controls.Add(listDoctorsControl);
@@ -162,7 +175,8 @@ namespace HospitalWindowsFormsApp
         private void btnListaPacientes_Click(object sender, EventArgs e)
         {
             RemoveOtherControls();
-
+            btnEditPaciente.Visible = true;
+            btnDeletePDLista.Visible = true;
             listaPacientesControl = new ListaPacientesControl();
 
             this.Controls.Add(listaPacientesControl);
@@ -216,18 +230,17 @@ namespace HospitalWindowsFormsApp
         private void btnDeleteMedico_Click(object sender, EventArgs e)
         {
             RemoveOtherControls();
-
+            btnEditarMedico.Visible = false;
+            btnDeleteMDLista.Visible = false;
             EliminarMedicoControl = new EliminarMedicoControl(personaList);
-
-            
-
             this.Controls.Add(EliminarMedicoControl);
         }
 
         private void btnDeletePaciente_Click(object sender, EventArgs e)
         {
             RemoveOtherControls();
-
+            btnEditPaciente.Visible = false;
+            btnDeletePDLista.Visible = false;
             EliminarPacienteControl = new EliminarPacienteControl(personaList);
             this.Controls.Add(EliminarPacienteControl);
         }
@@ -250,6 +263,8 @@ namespace HospitalWindowsFormsApp
             grpPaciente.Visible = false;
             grpAdmin.Visible = false;
             grpMedico.Visible = true;
+            btnEditarMedico.Visible = false;
+            btnDeleteMDLista.Visible = false;
         }
 
         private void btnPacientes_Click(object sender, EventArgs e)
@@ -259,6 +274,8 @@ namespace HospitalWindowsFormsApp
             grpAdmin.Visible = false;
             grpPaciente.Location = new Point(24, 69);
             grpPaciente.Visible = true;
+            btnEditPaciente.Visible = false;
+            btnDeletePDLista.Visible=false;
         }
 
         private void btnAdmins_Click(object sender, EventArgs e)
@@ -299,7 +316,29 @@ namespace HospitalWindowsFormsApp
 
         private void btnEditPaciente_Click(object sender, EventArgs e)
         {
+            listaPacientesControl.Visible = false;
+            if (listaPacientesControl.listaPacientesView.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Please select an item to delete.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+
+            // Get the selected item from ListView (first item if single selection)
+            var selectedItem = listaPacientesControl.listaPacientesView.SelectedItems[0];
+
+            // Retrieve values from each column (assuming column order is: nombre, edad, movil, especialidad)
+            string nombre = selectedItem.SubItems[0].Text;
+
+            // Find the matching persona in personaList based on unique properties (e.g., movil)
+            Persona personaToEdit = personaList.FirstOrDefault(p => p.Nombre == nombre && p is Paciente);
+
+            if (personaToEdit != null)
+            {
+                EditarPacienteControl = new EditarPacienteControl(personaList, (Paciente)personaToEdit);
+                this.Controls.Add(EditarPacienteControl);
+
+            }
         }
 
         private void EditAdmin_Click(object sender, EventArgs e)

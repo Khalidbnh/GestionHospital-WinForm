@@ -104,5 +104,10 @@ namespace HospitalWindowsFormsApp
         {
             this.Visible = false;
         }
+
+        private void AddPacienteControl_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
