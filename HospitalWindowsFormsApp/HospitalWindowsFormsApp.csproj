@@ -65,6 +65,13 @@
       <DependentUpon>AddPacienteControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Administrativo.cs" />
+    <Compile Include="Cita.cs" />
+    <Compile Include="CitaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CitaForm.Designer.cs">
+      <DependentUpon>CitaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditarAdminControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -139,6 +146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddPacienteControl.resx">
       <DependentUpon>AddPacienteControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CitaForm.resx">
+      <DependentUpon>CitaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditarAdminControl.resx">
       <DependentUpon>EditarAdminControl.cs</DependentUpon>

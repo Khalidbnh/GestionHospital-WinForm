@@ -38,17 +38,18 @@
             this.btnDeletePacienteN = new System.Windows.Forms.Button();
             this.btnDeleteAdmin = new System.Windows.Forms.Button();
             this.grpMedico = new System.Windows.Forms.GroupBox();
+            this.btnDeleteMDLista = new System.Windows.Forms.Button();
+            this.btnEditarMedico = new System.Windows.Forms.Button();
             this.btnMedicos = new System.Windows.Forms.Button();
             this.btnPacientes = new System.Windows.Forms.Button();
             this.btnAdmins = new System.Windows.Forms.Button();
             this.grpPaciente = new System.Windows.Forms.GroupBox();
-            this.grpAdmin = new System.Windows.Forms.GroupBox();
-            this.btnEditarMedico = new System.Windows.Forms.Button();
-            this.btnEditPaciente = new System.Windows.Forms.Button();
-            this.btnEditAdmin = new System.Windows.Forms.Button();
-            this.btnDeleteMDLista = new System.Windows.Forms.Button();
             this.btnDeletePDLista = new System.Windows.Forms.Button();
+            this.btnEditPaciente = new System.Windows.Forms.Button();
+            this.grpAdmin = new System.Windows.Forms.GroupBox();
             this.btnDeleteADlista = new System.Windows.Forms.Button();
+            this.btnEditAdmin = new System.Windows.Forms.Button();
+            this.btnCitas = new System.Windows.Forms.Button();
             this.grpMedico.SuspendLayout();
             this.grpPaciente.SuspendLayout();
             this.grpAdmin.SuspendLayout();
@@ -159,11 +160,31 @@
             this.grpMedico.TabStop = false;
             this.grpMedico.Text = "grpMedico";
             // 
+            // btnDeleteMDLista
+            // 
+            this.btnDeleteMDLista.Location = new System.Drawing.Point(568, 22);
+            this.btnDeleteMDLista.Name = "btnDeleteMDLista";
+            this.btnDeleteMDLista.Size = new System.Drawing.Size(142, 49);
+            this.btnDeleteMDLista.TabIndex = 2;
+            this.btnDeleteMDLista.Text = "Eliminar";
+            this.btnDeleteMDLista.UseVisualStyleBackColor = true;
+            this.btnDeleteMDLista.Click += new System.EventHandler(this.btnDeleteMDLista_Click);
+            // 
+            // btnEditarMedico
+            // 
+            this.btnEditarMedico.Location = new System.Drawing.Point(408, 21);
+            this.btnEditarMedico.Name = "btnEditarMedico";
+            this.btnEditarMedico.Size = new System.Drawing.Size(154, 50);
+            this.btnEditarMedico.TabIndex = 1;
+            this.btnEditarMedico.Text = "Editar Medico";
+            this.btnEditarMedico.UseVisualStyleBackColor = true;
+            this.btnEditarMedico.Click += new System.EventHandler(this.btnEditarMedico_Click);
+            // 
             // btnMedicos
             // 
             this.btnMedicos.Location = new System.Drawing.Point(24, 12);
             this.btnMedicos.Name = "btnMedicos";
-            this.btnMedicos.Size = new System.Drawing.Size(232, 51);
+            this.btnMedicos.Size = new System.Drawing.Size(192, 51);
             this.btnMedicos.TabIndex = 2;
             this.btnMedicos.Text = "Medicos";
             this.btnMedicos.UseVisualStyleBackColor = true;
@@ -171,9 +192,9 @@
             // 
             // btnPacientes
             // 
-            this.btnPacientes.Location = new System.Drawing.Point(287, 12);
+            this.btnPacientes.Location = new System.Drawing.Point(222, 12);
             this.btnPacientes.Name = "btnPacientes";
-            this.btnPacientes.Size = new System.Drawing.Size(232, 51);
+            this.btnPacientes.Size = new System.Drawing.Size(178, 51);
             this.btnPacientes.TabIndex = 2;
             this.btnPacientes.Text = "Pacientes";
             this.btnPacientes.UseVisualStyleBackColor = true;
@@ -181,9 +202,9 @@
             // 
             // btnAdmins
             // 
-            this.btnAdmins.Location = new System.Drawing.Point(549, 12);
+            this.btnAdmins.Location = new System.Drawing.Point(406, 12);
             this.btnAdmins.Name = "btnAdmins";
-            this.btnAdmins.Size = new System.Drawing.Size(232, 51);
+            this.btnAdmins.Size = new System.Drawing.Size(180, 51);
             this.btnAdmins.TabIndex = 2;
             this.btnAdmins.Text = "Administrativos";
             this.btnAdmins.UseVisualStyleBackColor = true;
@@ -203,6 +224,26 @@
             this.grpPaciente.TabStop = false;
             this.grpPaciente.Text = "grpPaciente";
             // 
+            // btnDeletePDLista
+            // 
+            this.btnDeletePDLista.Location = new System.Drawing.Point(568, 16);
+            this.btnDeletePDLista.Name = "btnDeletePDLista";
+            this.btnDeletePDLista.Size = new System.Drawing.Size(142, 49);
+            this.btnDeletePDLista.TabIndex = 2;
+            this.btnDeletePDLista.Text = "Eliminar";
+            this.btnDeletePDLista.UseVisualStyleBackColor = true;
+            this.btnDeletePDLista.Click += new System.EventHandler(this.btnDeletePDLista_Click);
+            // 
+            // btnEditPaciente
+            // 
+            this.btnEditPaciente.Location = new System.Drawing.Point(408, 16);
+            this.btnEditPaciente.Name = "btnEditPaciente";
+            this.btnEditPaciente.Size = new System.Drawing.Size(154, 50);
+            this.btnEditPaciente.TabIndex = 1;
+            this.btnEditPaciente.Text = "Editar Paciente";
+            this.btnEditPaciente.UseVisualStyleBackColor = true;
+            this.btnEditPaciente.Click += new System.EventHandler(this.btnEditPaciente_Click);
+            // 
             // grpAdmin
             // 
             this.grpAdmin.Controls.Add(this.btnDeleteADlista);
@@ -216,25 +257,15 @@
             this.grpAdmin.TabIndex = 4;
             this.grpAdmin.TabStop = false;
             // 
-            // btnEditarMedico
+            // btnDeleteADlista
             // 
-            this.btnEditarMedico.Location = new System.Drawing.Point(408, 21);
-            this.btnEditarMedico.Name = "btnEditarMedico";
-            this.btnEditarMedico.Size = new System.Drawing.Size(154, 50);
-            this.btnEditarMedico.TabIndex = 1;
-            this.btnEditarMedico.Text = "Editar Medico";
-            this.btnEditarMedico.UseVisualStyleBackColor = true;
-            this.btnEditarMedico.Click += new System.EventHandler(this.btnEditarMedico_Click);
-            // 
-            // btnEditPaciente
-            // 
-            this.btnEditPaciente.Location = new System.Drawing.Point(408, 16);
-            this.btnEditPaciente.Name = "btnEditPaciente";
-            this.btnEditPaciente.Size = new System.Drawing.Size(154, 50);
-            this.btnEditPaciente.TabIndex = 1;
-            this.btnEditPaciente.Text = "Editar Paciente";
-            this.btnEditPaciente.UseVisualStyleBackColor = true;
-            this.btnEditPaciente.Click += new System.EventHandler(this.btnEditPaciente_Click);
+            this.btnDeleteADlista.Location = new System.Drawing.Point(568, 22);
+            this.btnDeleteADlista.Name = "btnDeleteADlista";
+            this.btnDeleteADlista.Size = new System.Drawing.Size(142, 50);
+            this.btnDeleteADlista.TabIndex = 2;
+            this.btnDeleteADlista.Text = "Eliminar";
+            this.btnDeleteADlista.UseVisualStyleBackColor = true;
+            this.btnDeleteADlista.Click += new System.EventHandler(this.btnDeleteADlista_Click);
             // 
             // btnEditAdmin
             // 
@@ -246,41 +277,22 @@
             this.btnEditAdmin.UseVisualStyleBackColor = true;
             this.btnEditAdmin.Click += new System.EventHandler(this.EditAdmin_Click);
             // 
-            // btnDeleteMDLista
+            // btnCitas
             // 
-            this.btnDeleteMDLista.Location = new System.Drawing.Point(568, 22);
-            this.btnDeleteMDLista.Name = "btnDeleteMDLista";
-            this.btnDeleteMDLista.Size = new System.Drawing.Size(142, 49);
-            this.btnDeleteMDLista.TabIndex = 2;
-            this.btnDeleteMDLista.Text = "Eliminar";
-            this.btnDeleteMDLista.UseVisualStyleBackColor = true;
-            this.btnDeleteMDLista.Click += new System.EventHandler(this.btnDeleteMDLista_Click);
-            // 
-            // btnDeletePDLista
-            // 
-            this.btnDeletePDLista.Location = new System.Drawing.Point(568, 16);
-            this.btnDeletePDLista.Name = "btnDeletePDLista";
-            this.btnDeletePDLista.Size = new System.Drawing.Size(142, 49);
-            this.btnDeletePDLista.TabIndex = 2;
-            this.btnDeletePDLista.Text = "Eliminar";
-            this.btnDeletePDLista.UseVisualStyleBackColor = true;
-            this.btnDeletePDLista.Click += new System.EventHandler(this.btnDeletePDLista_Click);
-            // 
-            // btnDeleteADlista
-            // 
-            this.btnDeleteADlista.Location = new System.Drawing.Point(568, 22);
-            this.btnDeleteADlista.Name = "btnDeleteADlista";
-            this.btnDeleteADlista.Size = new System.Drawing.Size(142, 50);
-            this.btnDeleteADlista.TabIndex = 2;
-            this.btnDeleteADlista.Text = "Eliminar";
-            this.btnDeleteADlista.UseVisualStyleBackColor = true;
-            this.btnDeleteADlista.Click += new System.EventHandler(this.btnDeleteADlista_Click);
+            this.btnCitas.Location = new System.Drawing.Point(643, 12);
+            this.btnCitas.Name = "btnCitas";
+            this.btnCitas.Size = new System.Drawing.Size(154, 51);
+            this.btnCitas.TabIndex = 5;
+            this.btnCitas.Text = "Citas";
+            this.btnCitas.UseVisualStyleBackColor = true;
+            this.btnCitas.Click += new System.EventHandler(this.btnCitas_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(809, 677);
+            this.Controls.Add(this.btnCitas);
             this.Controls.Add(this.grpAdmin);
             this.Controls.Add(this.grpPaciente);
             this.Controls.Add(this.btnAdmins);
@@ -320,6 +332,7 @@
         private System.Windows.Forms.Button btnDeleteMDLista;
         private System.Windows.Forms.Button btnDeletePDLista;
         private System.Windows.Forms.Button btnDeleteADlista;
+        private System.Windows.Forms.Button btnCitas;
     }
 }
 

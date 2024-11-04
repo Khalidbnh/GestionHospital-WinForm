@@ -298,6 +298,8 @@ namespace HospitalWindowsFormsApp
             grpPaciente.Visible=false ;
             grpAdmin.Location = new Point(24, 69);
             grpAdmin.Visible = true;
+            btnDeleteADlista.Visible = false;
+            btnEditAdmin.Visible = false;
         }
 
         private void btnEditarMedico_Click(object sender, EventArgs e)
@@ -455,6 +457,15 @@ namespace HospitalWindowsFormsApp
                 listaAdministrativosControl.listaAdministrativos.Items.Remove(selectedItem);
                 MessageBox.Show($"{nombre} deleted.", "Item Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void btnCitas_Click(object sender, EventArgs e)
+        {
+            List<Medico> medicosList = personaList.OfType<Medico>().ToList();
+            List<Paciente> pacientesList = personaList.OfType<Paciente>().ToList();
+
+            CitaForm citaForm = new CitaForm(medicosList, pacientesList);
+            citaForm.ShowDialog();
         }
     }
 }
